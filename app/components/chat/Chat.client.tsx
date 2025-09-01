@@ -87,7 +87,7 @@ export const ChatImpl = memo(({ initialMessages, storeMessageHistory }: ChatProp
     initialMessages,
   });
 
-  const { enhancingPrompt, promptEnhanced, enhancePrompt, resetEnhancer } = usePromptEnhancer();
+  // const { enhancingPrompt, promptEnhanced, enhancePrompt, resetEnhancer } = usePromptEnhancer();
   const { parsedMessages, parseMessages } = useMessageParser();
 
   const TEXTAREA_MAX_HEIGHT = chatStarted ? 400 : 200;
@@ -206,8 +206,8 @@ export const ChatImpl = memo(({ initialMessages, storeMessageHistory }: ChatProp
       showChat={showChat}
       chatStarted={chatStarted}
       isStreaming={isLoading}
-      enhancingPrompt={enhancingPrompt}
-      promptEnhanced={promptEnhanced}
+      // enhancingPrompt={enhancingPrompt}
+      // promptEnhanced={promptEnhanced}
       sendMessage={sendMessage}
       messageRef={messageRef}
       scrollRef={scrollRef}
@@ -223,12 +223,12 @@ export const ChatImpl = memo(({ initialMessages, storeMessageHistory }: ChatProp
           content: parsedMessages[i] || '',
         };
       })}
-      enhancePrompt={() => {
-        enhancePrompt(input, (input) => {
-          setInput(input);
-          scrollTextArea();
-        });
-      }}
+      // enhancePrompt={() => {
+      //   enhancePrompt(input, (input) => {
+      //     setInput(input);
+      //     scrollTextArea();
+      //   });
+      // }}
     />
   );
 });
